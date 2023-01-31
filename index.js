@@ -126,7 +126,7 @@ Aşağıdaki periyotSkoru() fonksiyonununda aşağıdakileri yapınız:
 
 
 function periyotSkoru(callback) {
-  return macSonucu(takimSkoru,4)
+  return macSonucu(takimSkoru,1)
 }
 // console.log(periyotSkoru())
 
@@ -161,11 +161,11 @@ MAÇ UZAR ise skorTabelasi(periyotSkoru,takimSkoru,4)
 ] */
 // NOTE: Bununla ilgili bir test yoktur. Eğer logladığınız sonuçlar yukarıdakine benziyor ise tmamlandı sayabilirsiniz.
 
-function skorTabelasi(cb_periyotSkoru,cb_takimSkoru,period) {
+function skorTabelasi(cb_periyotSkoru,cb_takimSkoru,ceyrekSayisi) {
   let macDetaylari = [];
   let macEvSahibi = 0;
   let macKonukTakim = 0;
-  for(let i=1; i<= period; i++){
+  for(let i=1; i<= ceyrekSayisi; i++){
     let periyotSkoru = cb_periyotSkoru(cb_takimSkoru);
     macEvSahibi += periyotSkoru.EvSahibi;
     macKonukTakim += periyotSkoru.KonukTakim;
@@ -185,7 +185,6 @@ function skorTabelasi(cb_periyotSkoru,cb_takimSkoru,period) {
 }
 
 console.log(skorTabelasi(periyotSkoru,takimSkoru,4))
-
 
 /* Aşağıdaki satırları lütfen değiştirmeyiniz*/
 function sa(){
